@@ -1,0 +1,11 @@
+// 推奨拡張機能
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "esbenp.prettier-vscode",
+    "skyran.js-jsx-snippets",
+    "syler.sass-indented",
+    "stylelint.vscode-stylelint"
+  ]
+}

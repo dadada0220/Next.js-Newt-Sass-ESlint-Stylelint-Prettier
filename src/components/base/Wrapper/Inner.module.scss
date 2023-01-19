@@ -1,0 +1,19 @@
+@use '@/styles/common' as *;
+
+.Inner {
+  max-width: $breackpoint_lg;
+  padding: 0 40px;
+  margin: auto;
+  @include max-screen($breackpoint_md) {
+    padding: 0 20px;
+  }
+}
+
+.InnerSmall {
+  max-width: $breackpoint_md;
+  padding: 0 40px;
+  margin: auto;
+  @include max-screen($breackpoint_md) {
+    padding: 0 20px;
+  }
+}

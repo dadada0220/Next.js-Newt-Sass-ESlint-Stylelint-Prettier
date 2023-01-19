@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@use 'variables' as *;
+@use 'sass:math';
+
+// 背景画像
+// **********************************************
+@mixin background-image($file_name, $repeat: no-repeat) {
+  background: url($path_img + $file_name) center / cover no-repeat;
+}
+
+// アイコン（疑似要素をアイコン化する際に使用）
+// **********************************************
+@mixin icon($file_name, $width, $height) {
+  width: $width;
+  height: $height;
+  background: url($path_img + $file_name) center / $width $height no-repeat;
+}
+
+// メディアクエリ
+// **********************************************
+@mixin max-screen($breakPoint) {
+  @media (max-width: $breakPoint) {
+    @content;
+  }
+}
+@mixin min-screen($breakPoint) {
+  @media (min-width: $breakPoint) {
+    @content;
+  }
+}
+@mixin screen($breakPoint_min, $breakPoint_max) {
+  @media (min-width: $breakPoint_min) and (max-width: $breakPoint_max) {
+    @content;
+  }
+}
+
+// 要素を中央配置
+// **********************************************
+@mixin center($direction) {
+  position: absolute;
+  margin: auto;
+  @if $direction == xy {
+    inset: 0;
+  } @else if $direction == x {
+    inset: auto 0;
+  } @else if $direction == y {
+    inset: 0 auto;
+  }
+}
+
+// margin, paddingのユーティリティクラスを生成
+// @param $class クラス名
+// @param $property プロパティ名
+// @param $double 上下or左右にスタイルを適用させる場合、上下なら'y'、左右なら'x'を与える（省略可）
+// **********************************************
+@mixin create-space-class($class, $property, $double: false) {
+  @for $i from 0 through 100 {
+    // $i % [x] == 0（[x]には生成したい値の倍数を入れる。例：5 = 5, 10, 15・・・のようにクラスが生成される）
+    @if $i % 5 == 0 {
+      #{$class + $i} {
+        @if ($double == false) {
+          #{$property}: #{$i}px;
+        } @else if($double == 'x' and $i > 0) {
+          #{$property}: 0 #{$i}px;
+        } @else if($double == 'y' and $i > 0) {
+          #{$property}: #{$i}px 0;
+        }
+      }
+    }
+  }
+}

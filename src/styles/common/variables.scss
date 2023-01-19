@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+// Header height
+// **********************************************
+$header_h_lg: 56px;
+$header_h_sm: 56px;
+
+// BreackPoints
+// @see https://tailwindcss.jp/docs/breakpoints
+// **********************************************
+$breackpoint_sm: 640px;
+$breackpoint_md: 768px;
+$breackpoint_lg: 1024px;
+$breackpoint_xl: 1280px;
+
+// Path
+// **********************************************
+$path_img: '/img/';
+
+// Color
+// **********************************************
+$c--primary: #3a7cf1;
+
+$c--accent: #14e9b4;
+
+$c--black: #4c5e77;
+$c--white: #fff;
+
+$c--gray-s: #ecedf1;
+$c--gray-m: #abacb3;
+$c--gray-l: #4e5153;
+
+$c--text: $c--black;
+$c--link: $c--primary;
+
+$c--safe: #31a550;
+$c--warning: #96242e;

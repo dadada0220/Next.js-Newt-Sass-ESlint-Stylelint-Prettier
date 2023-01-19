@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+@use 'common' as *;
+
+form {
+  accent-color: $c--primary;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-transform: none;
+  border-radius: 0;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px 16px;
+  // UIの共通スタイル
+  background-color: $c--white;
+  border: solid 1px $c--gray-s;
+  border-radius: 4px;
+  // プレースホルダー
+  &::placeholder {
+    color: #b5b5b5;
+  }
+  // オートフィルで入力した際の背景色
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  }
+  // 編集不可など
+  &[readonly],
+  &:disabled {
+    cursor: not-allowed;
+    outline: none; // フォーカス時のスタイルを無効にする
+    opacity: 0.4;
+  }
+  // テキストエリア
+  @at-root textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  // セレクトボックス
+  @at-root select {
+    padding-right: 32px;
+    cursor: pointer;
+    background: $c--white
+      url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M24%2C24H0V0H24Z%22%20fill%3D%22none%22%20opacity%3D%220.87%22%2F%3E%3Cpath%20d%3D%22M15.88%2C9.29%2C12%2C13.17%2C8.12%2C9.29A1%2C1%2C0%2C0%2C0%2C6.71%2C10.7l4.59%2C4.59a1%2C1%2C0%2C0%2C0%2C1.41%2C0L17.3%2C10.7a1%2C1%2C0%2C0%2C0%2C0-1.41%2C1.017%2C1.017%2C0%2C0%2C0-1.42%2C0Z%22%2F%3E%3C%2Fsvg%3E')
+      right 8px center / 24px no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    // IEの矢印を非表示
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
+
+// 数値の増減ボタン非表示
+[type='number'] {
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// チェックボックス、ラジオボタン
+[type='radio'],
+[type='checkbox'] {
+  cursor: pointer;
+}
+
+button,
+[type='submit'],
+[type='reset'] {
+  cursor: pointer;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+// @see https://github.com/mike-engel/a11y-css-reset
+%__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+label.c-input-checkbox {
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  [type='checkbox'] {
+    $parent_checkbox: &;
+    @extend %__hidden;
+    + span {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      padding-right: 40px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: $c--gray-s;
+      @at-root #{$parent_checkbox}:checked + span {
+        background-color: rgba($c--primary, 0.1);
+      }
+      &::before {
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        content: '';
+        outline: solid 2px $c--black;
+        @at-root #{$parent_checkbox}:checked + span::before {
+          background-color: $c--primary;
+          border: solid 2px $c--white;
+          outline: solid 2px $c--primary;
+        }
+      }
+    }
+  }
+}
+
+label.c-input-radio {
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  [type='radio'] {
+    $parent_radio: &;
+    @extend %__hidden;
+    + span {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      padding-right: 40px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: $c--gray-s;
+      @at-root #{$parent_radio}:checked + span {
+        background-color: rgba($c--primary, 0.1);
+      }
+      &::before {
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        content: '';
+        background-color: $c--white;
+        border-radius: 50%;
+        outline: solid 2px $c--black;
+        @at-root #{$parent_radio}:checked + span::before {
+          background-color: $c--primary;
+          border: solid 3px $c--white;
+          outline: solid 2px $c--primary;
+        }
+      }
+    }
+  }
+}

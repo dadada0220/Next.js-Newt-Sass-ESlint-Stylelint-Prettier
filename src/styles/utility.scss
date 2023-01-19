@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+@use 'common' as *;
+
+@include create-space-class('.u-mt', 'margin-top');
+@include create-space-class('.u-ml', 'margin-left');
+@include create-space-class('.u-mr', 'margin-right');
+@include create-space-class('.u-mb', 'margin-bottom');
+// @include create-space-class('.u-mx', 'margin', 'x');
+// @include create-space-class('.u-my', 'margin', 'y');
+// @include create-space-class('.u-pt', 'padding-top');
+// @include create-space-class('.u-pl', 'padding-left');
+// @include create-space-class('.u-pr', 'padding-right');
+// @include create-space-class('.u-pb', 'padding-bottom');
+// @include create-space-class('.u-px', 'padding', 'x');
+// @include create-space-class('.u-py', 'padding', 'y');
+
+@include max-screen($breackpoint_md) {
+  @include create-space-class('.u-md-mt', 'margin-top');
+  @include create-space-class('.u-md-ml', 'margin-left');
+  @include create-space-class('.u-md-mr', 'margin-right');
+  @include create-space-class('.u-md-mb', 'margin-bottom');
+  // @include create-space-class('.u-md-mx', 'margin', 'x');
+  // @include create-space-class('.u-md-my', 'margin', 'y');
+  // @include create-space-class('.u-md-pt', 'padding-top');
+  // @include create-space-class('.u-md-pl', 'padding-left');
+  // @include create-space-class('.u-md-pr', 'padding-right');
+  // @include create-space-class('.u-md-pb', 'padding-bottom');
+  // @include create-space-class('.u-md-px', 'padding', 'x');
+  // @include create-space-class('.u-md-py', 'padding', 'y');
+}
+
+// Show, Hide
+// **********************************************
+.is-md-hide {
+  @include max-screen($breackpoint_md) {
+    display: none !important;
+  }
+}
+.is-md-show {
+  display: none;
+  @include max-screen($breackpoint_md) {
+    display: block !important;
+  }
+}

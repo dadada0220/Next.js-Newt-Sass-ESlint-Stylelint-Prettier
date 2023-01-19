@@ -1,0 +1,12 @@
+@use '@/styles/common' as *;
+
+.Footer {
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.Footer__copyright {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}

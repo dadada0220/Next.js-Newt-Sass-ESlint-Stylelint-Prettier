@@ -1,0 +1,15 @@
+@use '@/styles/common' as *;
+
+.Header {
+  width: 100%;
+}
+
+.Header__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.Header__logo {
+  width: 50px;
+}

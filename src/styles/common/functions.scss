@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@use 'variables' as *;
+
+// pxをvwに変換する関数
+// **********************************************
+@function pxtovw($num, $width: $breackpoint_md / ($breackpoint_md * 0 + 1)) {
+  @return (1vw * $num / $width * 100);
+}
