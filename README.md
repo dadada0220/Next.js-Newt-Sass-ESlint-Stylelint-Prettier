@@ -1,4 +1,4 @@
-# Next.js + Sass（SCSS記法） + ESlint + Stylelint + Prettier のテンプレート
+# Next.js + Newt + Sass（SCSS記法） + ESlint + Stylelint + Prettier のテンプレート
 
 ## 使用技術
 
