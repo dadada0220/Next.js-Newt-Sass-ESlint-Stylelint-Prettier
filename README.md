@@ -6,6 +6,7 @@
 - `Sass`（SCSS記法）
 - `Visual Studio Code`
 - `ESLint`, `Stylelint`, `Prettier`
+- ヘッドレスCMS（[Newt](https://www.newt.so/)）の雛形搭載済み
 
 ---
 
