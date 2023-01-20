@@ -1,6 +1,6 @@
 import '@/styles/_globals.scss';
+import GoogleTagManager from '@/components/base/EmbedTag/GoogleTagManager';
 import Layout from '@/components/base/Layout/Layout';
-import GoogleTagManager from '@/components/elements/EmbedTag/GoogleTagManager';
 import { siteData } from '@/const/site';
 const { googleTagManagerId } = siteData;
 
