@@ -2,9 +2,8 @@
  * トップページ
  */
 
-import Link from 'next/link';
 import Meta from '@/components/base/Meta/Meta';
-import Inner from '@/components/base/Wrapper/Inner';
+import Index from '@/components/page/Index/Index';
 
 export default function Home({}) {
   return (
@@ -13,11 +12,7 @@ export default function Home({}) {
         pageTitle=''
         pageDesc=''
       />
-      <Inner>
-        <p>ここはトップページです。</p>
-        <br />
-        <Link href='/news'>ニュースページへ</Link>
-      </Inner>
+      <Index />
     </>
   );
 }

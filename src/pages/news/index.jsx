@@ -3,11 +3,9 @@
  */
 
 import Meta from '@/components/base/Meta/Meta';
-import Inner from '@/components/base/Wrapper/Inner';
+import News_ from '@/components/page/News/News';
 import { getNewsCategory } from '@/features/news/api/getNewsCategory';
 import { getNewsPost } from '@/features/news/api/getNewsPost';
-import NewsCategoryList from '@/features/news/components/NewsCategoryList';
-import NewsPostList from '@/features/news/components/NewsPostList';
 
 export default function News({ newsPostList, newsCategoryList }) {
   return (
@@ -16,11 +14,10 @@ export default function News({ newsPostList, newsCategoryList }) {
         pageTitle='ニュース一覧'
         pageDesc=''
       />
-      <Inner>
-        <NewsCategoryList newsCategoryList={newsCategoryList} />
-        <hr />
-        <NewsPostList newsPostList={newsPostList} />
-      </Inner>
+      <News_
+        newsPostList={newsPostList}
+        newsCategoryList={newsCategoryList}
+      />
     </>
   );
 }
