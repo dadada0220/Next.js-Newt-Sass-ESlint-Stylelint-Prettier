@@ -9,19 +9,19 @@ import styles from './NewsPostList.module.scss';
 export default function NewsPostList({ newsPostList }) {
   return (
     <>
-      <div className={styles.NewsPostList}>
+      <div className={styles.newsList}>
         {newsPostList.map(({ title, slug, meta, body, coverImage, categories }, _index) => (
           <article
-            className={styles.NewsPostList__item}
+            className={styles.item}
             key={slug}
           >
             <Link
-              className={styles.NewsPostList__link}
+              className={styles.link}
               href={`/news/${slug}`}
             >
-              <h3 className={styles.NewsPostList__title}>{title}</h3>
+              <h3 className={styles.title}>{title}</h3>
               {coverImage && (
-                <div className={styles.NewsPostList__thumb}>
+                <div className={styles.thumb}>
                   <Image
                     src={coverImage.src}
                     alt=''

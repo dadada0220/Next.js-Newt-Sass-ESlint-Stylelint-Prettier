@@ -9,9 +9,9 @@ import styles from './Header.module.scss';
 export default function Header({}) {
   return (
     <>
-      <header className={styles.Header}>
-        <div className={styles.Header__inner}>
-          <div className={styles.Header__logo}>
+      <header className={styles.header}>
+        <div className={styles.inner}>
+          <div className={styles.logo}>
             <Link href='/'>
               <Image
                 src={'/img/logo/logo.svg'}
