@@ -1,0 +1,23 @@
+@use '@/styles/common' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  li {
+    a,
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin: 0 4px;
+      cursor: pointer;
+      &.isCurrent {
+        color: #fff;
+        cursor: auto;
+        background-color: #333;
+      }
+    }
+  }
+}

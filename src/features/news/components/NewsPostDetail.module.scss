@@ -1,0 +1,38 @@
+@use '@/styles/common' as *;
+
+.article {
+  display: block;
+}
+.header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+.meta {
+  display: flex;
+  font-size: 15px;
+}
+.date {
+  margin-right: 1em;
+}
+.category {
+  a {
+    padding: 0.2em 0.6em;
+    font-size: 13px;
+    border: solid 1px $c--black;
+  }
+}
+.thumb {
+  margin-top: 20px;
+}
+.body {
+  margin-top: 40px;
+  * {
+    + * {
+      margin-top: 1em;
+    }
+  }
+}

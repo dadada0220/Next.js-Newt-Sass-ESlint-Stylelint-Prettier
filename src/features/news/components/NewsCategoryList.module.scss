@@ -1,5 +1,8 @@
 @use '@/styles/common' as *;
 
-.NewsCategoryList {
-  display: block;
+.categoryList {
+  display: flex;
+  > * {
+    margin-right: 20px;
+  }
 }

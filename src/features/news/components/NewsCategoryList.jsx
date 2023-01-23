@@ -9,13 +9,13 @@ import styles from './NewsCategoryList.module.scss';
 export default function NewsCategoryList({ newsCategoryList }) {
   return (
     <>
-      <ul className={styles.NewsCategoryList}>
+      <ul className={styles.categoryList}>
         <li>
           <Link href='/news'>ALL</Link>
         </li>
         {newsCategoryList.map(({ name, slug }) => (
           <li key={slug}>
-            <Link href={`/news/${slug}`}>{name}</Link>
+            <Link href={`/news/category/${slug}`}>{name}</Link>
           </li>
         ))}
       </ul>

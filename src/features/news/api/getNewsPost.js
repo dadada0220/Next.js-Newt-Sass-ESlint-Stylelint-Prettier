@@ -3,7 +3,7 @@ import { newtCdnClient } from '@/lib/newt';
 /**
  * ニュースの投稿を取得
  * @param {Object} _query queryパラメータ // https://developers.newt.so/apis/cdn#tag/contents_general/Queries
- * @returns {Array} ニュースの投稿
+ * @returns {Object} ニュースの投稿オブジェクト
  */
 export async function getNewsPost(_query) {
   const query = _query || [];

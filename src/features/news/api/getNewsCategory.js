@@ -3,7 +3,7 @@ import { newtCdnClient } from '@/lib/newt';
 /**
  * ニュースのカテゴリーを取得
  * @param {Object} _query queryパラメータ // https://developers.newt.so/apis/cdn#tag/contents_general/Queries
- * @returns {Array} ニュースのカテゴリー
+ * @returns {Object} ニュースのカテゴリーオブジェクト
  */
 export async function getNewsCategory(_query) {
   const query = _query || [];

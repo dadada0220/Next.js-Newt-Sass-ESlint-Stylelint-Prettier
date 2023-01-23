@@ -15,13 +15,12 @@ export default function NewsPostList({ newsPostList }) {
             className={styles.item}
             key={slug}
           >
-            <Link
-              className={styles.link}
-              href={`/news/${slug}`}
-            >
-              <h3 className={styles.title}>{title}</h3>
-              {coverImage && (
-                <div className={styles.thumb}>
+            <h3 className={styles.title}>
+              <Link href={`/news/article/${slug}`}>{title}</Link>
+            </h3>
+            {coverImage && (
+              <div className={styles.thumb}>
+                <Link href={`/news/article/${slug}`}>
                   <Image
                     src={coverImage.src}
                     alt=''
@@ -29,9 +28,17 @@ export default function NewsPostList({ newsPostList }) {
                     height='100'
                     priority={_index < 8 ? true : false} // ファーストビューの投稿画像は優先的に読み込む
                   />
-                </div>
-              )}
-            </Link>
+                </Link>
+              </div>
+            )}
+            <div className={styles.meta}>
+              <Link
+                href={`/news/${categories[0].slug}`}
+                className={styles.category}
+              >
+                {categories[0].name}
+              </Link>
+            </div>
           </article>
         ))}
       </div>
