@@ -12,8 +12,6 @@
 
 ## 環境構築
 
-npmモジュールとVSCodeの拡張機能をインストールするだけ。
-
 ### 必要なモジュールをインストール
 ```
 $ npm i
@@ -27,6 +25,10 @@ Node.js `v18.12.0`にて検証済み
 - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
 VSCode `v1.74.2`にて検証済み
+
+### .env作成
+
+`.env.example`を複製してファイル名を`.env`にする
 
 ---
 
